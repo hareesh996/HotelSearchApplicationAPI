@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mappings xmlns="http://dozer.sourceforge.net"
+          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+          xsi:schemaLocation="http://dozer.sourceforge.net
+          http://dozer.sourceforge.net/schema/beanmapping.xsd">
+		<mapping map-id="HotelLikesMapper">
+		<class-a>com.strikers.hotel.dao.entity.HotelLikes</class-a>
+		<class-b>com.strikers.hotel.model.HotelLikes</class-b>
+		<field>
+			<a>id</a>
+			<b>id</b>
+		</field>
+		<field>
+			<a>upLikes</a>
+			<b>upLikes</b>
+		</field>
+		<field>
+			<a>downLikes</a>
+			<b>downLikes</b>
+		</field>
+	</mapping>
+	
+	<mapping map-id="AmountMapper">
+		<class-a>com.strikers.hotel.dao.entity.HotelPrice</class-a>
+		<class-b>com.strikers.hotel.model.Price</class-b>
+		<field>
+			<a>totalAmount</a>
+			<b>actualPrice</b>
+		</field>
+		<field>
+			<a>discount</a>
+			<b>discountPercentage</b>
+		</field>
+		<field>
+			<a>currency.currencyName</a>
+			<b>currency.currencyName</b>
+		</field>
+	</mapping>
+		
+	<mapping map-id="AddressMapper">
+		<class-a>com.strikers.hotel.dao.entity.Address</class-a>
+		<class-b>com.strikers.hotel.model.Address</class-b>
+		<field>
+			<a>addressText1</a>
+			<b>line1</b>
+		</field>
+		<field>
+			<a>addressText2</a>
+			<b>line2</b>
+		</field>
+		<field>
+			<a>city.cityId</a>
+			<b>city.value</b>
+		</field>
+		<field>
+			<a>city.cityName</a>
+			<b>city.name</b>
+		</field>
+		<field>
+			<a>city.country.countryCd</a>
+			<b>country.value</b>
+		</field>
+		<field>
+			<a>city.country.countryName</a>
+			<b>country.name</b>
+		</field>
+	</mapping>
+	<mapping map-id="HotelMapper" wildcard="false" map-null="false">
+		<class-a>com.strikers.dao.entity.Hotel</class-a>
+		<class-b>com.strikers.hotel.model.Hotel</class-b>
+		<field>
+			<a>id</a>
+			<b>hotelId</b>
+		</field>
+		<field>
+			<a>hotelName</a>
+			<b>name</b>
+		</field>
+		<field map-id="AddressMapper">
+			<a>address</a>
+			<b>location</b>
+		</field>
+		<field>
+			<a>link</a>
+			<b>link</b>
+		</field>
+		<field map-id="HotelLikesMapper">
+			<a>hotelLikes</a>
+			<b>likes</b>
+		</field>
+		<field map-id="AmountMapper">
+			<a>hotelPrice</a>
+			<b>amount</b>
+		</field>
+	</mapping>
+	
+
+
+</mappings>
